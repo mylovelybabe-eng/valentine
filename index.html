@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Happy Valentine's Day ❤️</title>
+<style>
+body {
+  margin:0;
+  padding:0;
+  background: linear-gradient(to right, #ff4e50, #fc913a);
+  font-family: 'Arial', sans-serif;
+  text-align:center;
+  color:white;
+  overflow:hidden;
+}
+
+h1 {
+  margin-top:20%;
+  font-size:50px;
+  animation: fadeIn 3s ease-in-out;
+}
+
+p {
+  font-size:22px;
+  animation: fadeIn 5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {opacity:0;}
+  to {opacity:1;}
+}
+
+.heart {
+  position: fixed;
+  bottom: -10px;
+  font-size: 20px;
+  animation: float 5s infinite;
+}
+
+@keyframes float {
+  0% {transform: translateY(0);}
+  100% {transform: translateY(-100vh);}
+}
+</style>
+</head>
+
+<body>
+
+<h1>Happy Valentine's Day ❤️</h1>
+<p>My love, you are the most beautiful part of my life.  
+Thank you for making every day special.  
+I love you forever 💖</p>
+
+<audio autoplay loop>
+  <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+function createHeart() {
+  const heart = document.createElement("div");
+  heart.classList.add("heart");
+  heart.innerHTML = "❤️";
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.animationDuration = (Math.random() * 3 + 2) + "s";
+  document.body.appendChild(heart);
+
+  setTimeout(() => {
+    heart.remove();
+  }, 5000);
+}
+
+setInterval(createHeart, 300);
+</script>
+
+</body>
+</html>
